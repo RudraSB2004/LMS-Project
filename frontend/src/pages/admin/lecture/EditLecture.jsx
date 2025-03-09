@@ -1,7 +1,7 @@
 import { Button } from "../../../components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
-import LectureTab from "./Lecturetab";
+import LectureTab from "./LectureTab";
 
 const EditLecture = () => {
   const params = useParams();
