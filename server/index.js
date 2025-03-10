@@ -13,8 +13,7 @@ dotenv.config({});
 
 const app = express();
 connectDB();
-const PORT = process.env.PORT || 3000;
-const _dirname = path.resolve();
+const PORT = process.env.PORT;
 app.use(cookieParser());
 app.use(express.json());
 
@@ -30,10 +29,6 @@ app.use("/api/v1/purchase", purchaseRoute);
 app.use("/api/v1/course", courseRoute);
 app.use("/api/v1/progress", courseProgressRoute);
 
-app.use(express.static(path.join(_dirname, "/frontend/dist")));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
-});
 app.listen(PORT, () => {
   console.log(`Server listen at port ${PORT}`); //port:4000
 });
